@@ -1,4 +1,7 @@
 #!/bin/bash
 
-pacman -Qqe | grep -vx "$(pacman -Qqm)" | install -D /dev/stdin ~/noobjaro/packages.log
-pacman -Qqm | install -D /dev/stdin ~/noobjaro/packages-aur.log
+echo 'is this on the [old] system or the [new]  one?'
+read VERSION
+
+pacman -Qqe | grep -vx "$(pacman -Qqm)" | install -D /dev/stdin ~/noobjaro/packages.$VERSION.log
+pacman -Qqm | install -D /dev/stdin ~/noobjaro/packages-aur.$VERSION.log
