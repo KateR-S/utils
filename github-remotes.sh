@@ -16,4 +16,4 @@ done < "${SUBDIR_FILE}" > "${OTHER_FILE}"
 grep fetch $OTHER_FILE |
     sort |
     uniq |
-    awk -F "[ \t]+" '{print $2}' > $THIS_DIR/output/remotes.log
+    awk -F "[ \t]+" '{print $2}' > ~/noobjaro/remotes.log

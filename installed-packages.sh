@@ -1,6 +1,4 @@
 #!/bin/bash
 
-PLOC="output/Packages"
-
-pacman -Qqe | grep -vx "$(pacman -Qqm)" > "$PLOC.log"
-pacman -Qqm > "$PLOC-aur.log"
+pacman -Qqe | grep -vx "$(pacman -Qqm)" | install -D /dev/stdin ~/noobjaro/packages.log
+pacman -Qqm | install -D /dev/stdin ~/noobjaro/packages-aur.log
